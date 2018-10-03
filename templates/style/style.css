@@ -1,0 +1,404 @@
+* { 
+	box-sizing: border-box;
+}
+
+header, nav, main, footer { 
+	display: block; 
+}
+
+
+body { 
+	background-color: #b8e281;
+	color: #FFFFFF;
+	font-family: Verdana, Arial, sans-serif;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+#wrapper { 
+	width: 80%;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	min-width: 1025px;
+	max-width: 1480px;
+	height: 100%;
+	position: relative;
+}
+
+header { 
+	background-color: #ff8194;
+	background-image: url(../images/logo_small.png);
+	background-repeat: no-repeat;
+	background-position: 1em .5em;
+	font-size: 130%;
+	height: 100px;
+}
+
+header h1, header h4 { 
+	padding-left: 120px;
+	margin: 0;
+	color: #94ff81;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Bowlby One SC';
+	font-weight: 100;
+	color: #B57340;
+}
+
+main { 
+	padding-left: 2em;
+	padding-right: 2em;
+	margin-left: 170px;
+	padding-top: 1em;
+	color: #000;
+	min-height: 340px;
+}
+
+nav { 
+	float: left;
+	width: 175px;
+	padding: 1em;
+}
+
+nav a { 
+	color: #ff3553;
+	display: block;
+	font-family: 'Bowlby One SC';
+	font-size: 150%;
+	text-align: center;
+	margin-bottom: 2em;
+	line-height: 80%;
+	text-shadow: 1px 1px #ddd;
+}
+
+nav a:hover { 
+	color: #4082b5; 
+}
+
+nav ul { 
+	list-style-type:  none;
+	padding-left: 0;
+}
+
+footer { 
+	background-color: #ff8194;
+	font-size: small;
+	font-style: italic;
+	text-align: center;
+	padding: .5em;
+	clear: both;
+}
+
+footer a {
+	color: #FFFFFF;
+}
+
+aside {
+	float: right;
+	font-size: 80%;
+}
+
+form {
+	display: table;
+	width: 100%;
+}
+
+form p, fieldset {
+	display: table-row;
+}
+
+label {
+	display: table-cell;
+	padding: 10px 5px;
+	text-align: right;
+	vertical-align: top;
+	width: 20%;
+}
+
+input, textarea {
+	margin: 10px 5px;
+	display: table-cell;
+	font-size: 130%;
+	width: 50%;
+}
+
+.button {
+	background-color: #ff3553;
+	color: #fff;
+	font-family: 'Bowlby One SC';
+	width: 190px;
+}
+
+.button:hover {
+	background-color: #4082b5;
+}
+
+.reviewFruit {
+	float: left;
+	width: 80px;
+}
+
+.date {
+	float: right;
+	font-size: 75%;
+}
+
+#reviews {
+	clear: both;
+	display: block;	
+	padding-top: 2em;
+	width: 80%;
+}
+
+.review {
+	padding-top: 2em;
+}
+
+#editFruit {
+	max-width: 300px;
+	position: fixed;
+	bottom: 50px;
+	right: 10%;
+	opacity: 0.7;
+}
+
+.fruitbackground {
+	background-position: right bottom; 
+	background-repeat: no-repeat; 
+	background-size: 25%;
+	min-height: 300px;
+}
+
+#actualbasket {
+	display: block;
+	margin: auto;
+	width: 50%;
+}
+
+
+/* ----------------- styling of fruit basket ----------------- */
+#basket {
+	clear: right;
+}
+
+.basket-item {
+	display: inline-block;
+	float: left;
+	min-width: 200px;
+	width: 33%;
+}
+
+
+.fruitbutton {
+	background-color: transparent;
+	border: none;
+	color: #ff5a5a;
+	display: inline-block;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	min-width: 200px;
+	width: 100%;
+	height: 250px;
+	position: relative;
+}
+
+.fruitbutton:hover {
+	background-color: #b8e281;
+}
+
+.fruitbuttoninterior {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* ----------------- styling of top 10 ----------------- */
+#top10 {
+	clear: right;
+	min-width: 250px;
+	width: 100%;
+}
+
+.top10row {
+	display: table-row;
+	height: 300px;
+}
+
+.top10counter {
+	display: table-cell;
+	color: #ff5a5a;
+	font-family: 'Bowlby One SC';
+	font-size: 800%;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.top10item {
+	display: table-cell;
+	width: 100%;
+}
+
+#top10 img {
+	width: auto;
+}
+
+
+/* ----------------- Star Rating ----------------- */
+.rating {
+	float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+follow these rules. Every browser that supports :checked also supports :not(), so
+it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+	position:absolute;
+	top:-9999px;
+	clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+	float:right;
+	width:1em;
+	padding:0 .1em;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+	font-size:200%;
+	line-height:1.2;
+	color:#ddd;
+	text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+	content: '★ ';
+}
+
+.rating > input:checked ~ label {
+	color: #f70;
+	text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+	color: #ffe135;
+	text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+	color: #ea0;
+	text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+	position:relative;
+	top:2px;
+	left:2px;
+}
+
+
+/* ----------------- styling for different screen size ----------------- */
+@media only screen and (max-width: 1024px) {
+	body { 
+		margin: 0;
+		padding: 0; 
+	}
+	#wrapper {
+		width: 100%;
+		min-width: 0;
+		margin: 0;
+		padding: 0; 
+	}
+	header {
+		margin: 0;
+		padding-top: 1px; 
+	}
+	h1 { 
+		font-size: 2em;
+		padding-top: 0;
+		padding-left: 1.5em; 
+		width: 85%; 
+	}
+	nav { 
+		float: none;
+		padding-left: 2em;
+		width: auto; 
+	}
+	nav a { 
+		padding: 0.2em;
+		margin-left: 0.3em;
+		float: left;
+		width: 23%;
+		margin-bottom: 1em;
+	}
+	main  { 
+		padding: 2.5em;
+		margin: 0;
+		font-size: 90%;
+		clear: both;
+		min-height: 0; 
+	}
+
+	input, textarea {
+		width: 90%;
+	}
+
+
+}
+
+@media only all and (max-width: 768px) {
+	h1 { 
+		padding-top: 0; 
+		padding-left: 1.25em; 
+		padding-right: 0.5em; 
+		width: 100%; 
+	}
+	nav a { 
+		padding: 0.5em; 
+		width: 45%; 
+		float: left; 
+		min-width: 6em; 
+		margin-left: 0.5em; }
+	main { 
+		padding-top: 0;
+		min-height: 0;
+	}
+	footer {
+		padding: 0.5em; margin: 0;
+	}
+	.basket-item {
+		width: 50%;
+	}
+	#actualbasket {
+		display: block;
+		margin: auto;
+		width: 60%;
+	}
+}
+
+@media only all and (max-width: 550px) {
+	header h1 {
+		font-size: 180%;
+	}
+	header h4 {
+		display: none;
+	}
+	.basket-item {
+		width: 100%;
+	}
+	#actualbasket {
+		display: block;
+		margin: auto;
+		width: 100%;
+	}
+}
